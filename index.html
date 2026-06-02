@@ -241,7 +241,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Cormorant Garamond
 <!-- S1: DATOS DE VIDA -->
 <div class="screen" id="s1">
   <div class="datos-titulo">Tu historia en números</div>
-  <div class="datos-sub">✨ desde el 2 de febrero de 2009 ✨</div>
+  <div class="datos-sub">✨ desde el 2 de junio de 2009 ✨</div>
   <div class="datos-lista" id="datosLista"></div>
   <button class="btn" onclick="goTo(2)" style="margin-top:24px;">Ver las fotos 📸</button>
 </div>
@@ -269,7 +269,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:'Cormorant Garamond
     <div class="rmsg" id="r2">
       <div class="emo">🦋</div>
       <h2>17 años de esplendida existencia </h2>
-      <p>A los 17, todo cambia (no solo porque ya puedes usar magia segun el estatuto para la libre moderacion de magia ne menores) pero algo que se ha mantenido es tu sonrisa, tu esencia, tu forma de ver el mundo... todo en ti es completamente irrepetible.</p>
+      <p>A los 17, todo cambia (no solo porque ya puedes usar magia segun el estatuto para la libre moderacion de magia en menores) pero algo que se ha mantenido es tu sonrisa, tu esencia, tu forma de ver el mundo... todo en ti es completamente irrepetible.</p>
       <button class="btn" onclick="goTo(4)">Ver tus razones →</button>
     </div>
     <div class="cbar" id="b2">
@@ -463,7 +463,7 @@ function startMusic(){
 let datosInited=false;
 function initDatos(){
   if(datosInited)return; datosInited=true;
-  const nac=new Date(2009,1,2), hoy=new Date();
+   const nac=new Date(2009,5,3), hoy=new Date();
   const dias=Math.floor((hoy-nac)/86400000);
   const anos=Math.floor(dias/365.25);
   const resto=dias-(anos*365.25|0);
@@ -702,4 +702,5 @@ function animConf(){
 }
 </script>
 </body>
+</html>
 </html>
