@@ -463,16 +463,27 @@ function startMusic(){
 let datosInited=false;
 function initDatos(){
   if(datosInited)return; datosInited=true;
-   const nac=new Date(2009,5,3), hoy=new Date();
+   const nac=new Date(2009,5,2), hoy=new Date();
   const dias=Math.floor((hoy-nac)/86400000);
-  const anos=Math.floor(dias/365.25);
-  const resto=dias-(anos*365.25|0);
-  const meses=Math.floor(resto/30.44);
-  const diasR=Math.floor(resto-meses*30.44);
+
+  let anos=hoy.getFullYear()-nac.getFullYear();
+  let meses=hoy.getMonth()-nac.getMonth();
+  let diasR=hoy.getDate()-nac.getDate();
+
+  if (diasR < 0) {
+    const diasPrevMes=new Date(hoy.getFullYear(), hoy.getMonth(), 0).getDate();
+    diasR += diasPrevMes;
+    meses -= 1;
+  }
+  if (meses < 0) {
+    meses += 12;
+    anos -= 1;
+  }
+
   const latidos=Math.floor(dias*86400*72);
   const respiraciones=Math.floor(dias*86400*16);
   const lunas=Math.floor(dias/29.53);
-  const vueltas=Math.floor(dias/365.25);
+  const vueltas=anos;
 
   function ticker(n){
     const s=n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,',');
@@ -702,5 +713,4 @@ function animConf(){
 }
 </script>
 </body>
-</html>
 </html>
